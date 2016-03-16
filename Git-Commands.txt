@@ -1,0 +1,43 @@
+https://github.com/svempati2006/training.git
+
+Summary of today's primer follows.  A command line git client (GitHub
+ for Windows has git-bash for example) is still a good idea since all
+ of the git knowledge you find on the web tends to show command line
+ git.
+
+ 1. check out a new local copy of GTAS from github:
+
+ git clone https://github.com/bastyg/GTAS.git
+
+ You should only need to do this once.
+
+ 2. git status
+
+ This commands shows how your local repo compares against the master
+ repo in GitHub.  It will show any local files you've modified, added,
+ or deleted.
+
+ 3. You've made some local changes and want to commit them:
+
+   a. git stash
+   b. git pull --rebase
+   c. git stash pop
+
+ At this point, you may have some merge conflicts.  'git status' will
+ show which files require merging manually.  If you open these files in
+ a text editor, you'll notice that git marked the locations of the
+ conflicts (just like svn).
+
+ Once you've manually corrected the conflicts, you run 'git add' on
+ those files.  And then,
+
+   d. git commit -a
+
+ will commit all of your files at once with the same message (a vi text
+ editor will open automatically).  If you want to commit files
+ incrementally, you can follow 'git commit' with one or more file
+ names.  And finally,
+
+   e. git push
+
+ will push your changes to the remote "master" repository on GitHub.
